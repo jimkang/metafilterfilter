@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+
+  "name": "MetaFilterFilter",
+  "description": "Filter out stuff on MetaFilter.",
+  "version": "1.0.0",
+
+  "permissions": [
+    "http://*.metafilter.com/*"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": ["http://*.metafilter.com/*"],
+      "css": ["mff.css"],
+      "js": ["mff.js"]
+    }
+  ],
+
+  "web_accessible_resources": [
+    "mff.css", "mff.js"
+  ],
+
+  "icons": {
+    "16": "mff_icon_16.png",
+    "48": "mff_icon_48.png",
+    "128": "mff_icon_128.png"
+  }
+}
+
