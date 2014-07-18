@@ -67,7 +67,10 @@
       var stripChildCount = bottomStripEl.childNodes.length;
       if (stripChildCount > 2) {
         var favSpan = bottomStripEl.childNodes[stripChildCount - 2];
-        storeId(favSpan.id)
+        // If the user is not logged in, there will be no favSpan.
+        if (favSpan.id) {
+          storeId(favSpan.id)
+        }
       }
     }
 
@@ -79,6 +82,7 @@
     var ids;
     if (idArrayString) {
       ids = JSON.parse(localStorage.filteredIds);
+      ids = ids.filter(function isNotEmpty(id) { return (id); });      
     }
     else {
       ids = [];      

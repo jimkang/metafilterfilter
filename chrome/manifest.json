@@ -3,7 +3,7 @@
 
   "name": "MetaFilterFilter",
   "description": "Filter out stuff on MetaFilter.",
-  "version": "1.0.0",
+  "version": "1.0.1",
 
   "permissions": [
     "http://*.metafilter.com/*"
