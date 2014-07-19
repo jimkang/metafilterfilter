@@ -27,36 +27,6 @@
     filterSpan.appendChild(filterLink);
     postEl.appendChild(filterSpan);
   }
-  // function shuffle(array) {
-  //   var swapIndex1 = null;
-  //   var swapIndex1UpperLimit = array.length;
-  //   var swapIndex2 = array.length - 1;
-  //   var swapee = null;
-
-  //   for (var i = 0; i < array.length; ++i) {
-  //     swapIndex1 = ~~(Math.random() * swapIndex1UpperLimit);
-
-  //     swapee =  array[swapIndex1];
-  //     array[swapIndex1] = array[swapIndex2];
-  //     array[swapIndex2] = swapee;
-
-  //     swapIndex1UpperLimit -= 1;
-  //     swapIndex2 -= 1;
-  //   }
-
-  //   return array;
-  // }
-
-  // var tweetTexts = document.querySelectorAll('.tweet-text');
-  // var tweetContents = [];
-  // tweetTexts.forEach(function getContents(tweet) {
-  //   tweetContents.push(tweet.innerHTML);
-  // });
-  // var shuffledContents = shuffle(tweetContents);
-
-  // tweetTexts.forEach(function replaceWithShuffled(tweetText, i) {
-  //   tweetText.innerHTML = shuffledContents[i];
-  // });
 
   function markPostAsFiltered(e) {
     // BIG ASSUMPTIONS here about the structure of the post div.
@@ -106,7 +76,9 @@
   function killPostForFavId(id) {
     console.log('MetaFilterFilter is filtering', id, 'from MetaFilter');
     var favSpan = document.querySelector('#' + id);
-    destroyEl(favSpan.parentElement.parentElement);
+    if (favSpan) {
+      destroyEl(favSpan.parentElement.parentElement);
+    }
   }
 
   function destroyEl(el) {
