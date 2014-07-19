@@ -85,8 +85,18 @@
     el.parentElement.removeChild(el);
   }
 
-  filterPosts();
-  addFilterButtons();
+  try {
+    filterPosts();
+  }
+  catch (e) {
+    console.log('MFF hit an error while filtering posts:', e);
+  }
+
+  try {
+    addFilterButtons();
+  }
+  catch (e) {
+    console.log('MFF hit an error while adding buttons:', e);
+  }
 
 })());
-
